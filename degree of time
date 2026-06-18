@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int h, m;
+    scanf("%d %d", &h, &m);
+
+    double minute = m * 6;
+    double hour = (h % 12) * 30 + m * 0.5;
+
+    double diff = fabs(hour - minute);
+
+    if (diff > 180)
+        diff = 360 - diff;
+
+    printf("%.1lf", diff);
+
+    return 0;
+}
